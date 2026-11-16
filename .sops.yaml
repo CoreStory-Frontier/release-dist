@@ -1,0 +1,10 @@
+---
+keys:
+  - &qcoh age1hrk0haltt9qtw440yf3lzvjteglrhv3wcwcq54qv0qz2udukmuzqve33my
+  - &gha age182llyltscuand7wu0zxpqkl6eakg6n35234xpa4mfj4n66m6xs2sgvc2wz
+creation_rules:
+  - path_regex: secrets/default.yaml
+    key_groups:
+      - age:
+          - *qcoh
+          - *gha
