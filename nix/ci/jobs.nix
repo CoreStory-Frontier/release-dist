@@ -11,11 +11,8 @@
         name = "decrypt-github-app-secrets";
         env.SOPS_AGE_KEY = "\${{ secrets.SOPS_AGE_KEY }}";
         run = ''
-          decrypt() {
-            nix develop -c sops decrypt --extract "[\"$1\"]" secrets/default.yaml
-          }
-          client_id=$(decrypt app_client_id)
-          private_key=$(decrypt app_private_key)
+          client_id=$(nix develop -c sops-decrypt app_client_id)
+          private_key=$(nix develop -c sops-decrypt app_private_key)
           while IFS= read -r line; do
             [ -n "$line" ] && echo "::add-mask::$line"
           done <<<"$private_key"
