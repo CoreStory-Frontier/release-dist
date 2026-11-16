@@ -1,14 +1,14 @@
-use anyhow::{Context as _, anyhow, ensure};
+use anyhow::{anyhow, ensure, Context as _};
 use chrono::{DateTime, Utc};
 use semver::Version;
-use serde::{Serialize, ser};
+use serde::{ser, Serialize};
 use std::collections::BTreeMap;
 use std::fs;
 use std::path::{Path, PathBuf};
-use types::{Platform, PlatformKey, Product, ReleaseAsset};
 use url::Url;
 
 mod parse;
+use parse::{Platform, PlatformKey, Product, ReleaseAsset};
 
 pub struct Manifest {
     cli: Option<VersionContent>,

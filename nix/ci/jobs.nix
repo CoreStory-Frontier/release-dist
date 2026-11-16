@@ -12,7 +12,7 @@
         env.SOPS_AGE_KEY = "\${{ secrets.SOPS_AGE_KEY }}";
         run = ''
           decrypt() {
-            nix shell --inputs-from . nixpkgs#sops -c sops decrypt --extract "[\"$1\"]" secrets/default.yaml
+            nix develop -c sops decrypt --extract "[\"$1\"]" secrets/default.yaml
           }
           client_id=$(decrypt app_client_id)
           private_key=$(decrypt app_private_key)

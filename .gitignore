@@ -1,4 +1,5 @@
 !.sops.yaml
 !.envrc
+!.github
 ./direnv
 target/
