@@ -11,7 +11,7 @@ on macOS for Gatekeeper as well.  The macOS app is signed with an Apple Develope
 
 ## Support
 
-Please report any problem with installation, download, or use by opening an [issue](https://github.com/CoreStory-Frontier/release-dist/issues/new).  Please include the release version,
+Please report any problem with installation, download, or use by opening an [issue](https://github.com/CoreStory-Frontier/release-dist/issues/new).  Be sure to include the release version,
 platform, and any relevant error output.
 
 ## License
